@@ -20,7 +20,7 @@
                     <span>Already have an account? <a href="#" onclick="showLogin()">Log In</a></span>
                     <header>Sign Up</header>
                 </div>
-                <form action="/store" method="POST">
+                <form action="{{route('register')}}" method="POST">
                     @csrf
                     <div class="two-forms">
                         <div class="input-box">
@@ -55,7 +55,7 @@
                     <span>Don’t have an account? <a href="#" onclick="showRegister()">Sign Up</a></span>
                     <header>Login</header>
                 </div>
-                <form action="/store" method="POST">
+                <form action="/admin" method="POST">
                     @csrf
                     <div class="input-box">
                         <input type="text" class="input-field" placeholder="Username" required>

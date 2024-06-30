@@ -12,6 +12,7 @@
     --black2: #999;
     --red: #f00;
     --green:#21bb13;
+    --yellow: #f5f529d3;
 }
 body {
     min-height: 100vh;
@@ -60,7 +61,7 @@ body {
     width: 100%;
     display: flex;
     text-decoration: none;
-    color: var(--white);
+    color: var(--white);    
 }
 .navigation ul li:hover a,
 .navigation ul li.hovered a {
@@ -191,7 +192,7 @@ body {
     width: 100%;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
     grid-gap: 30px;
 }
 .cardBox .card {
@@ -296,7 +297,7 @@ body {
 .details .recentOrders table tr td:nth-child(3) {
     text-align: center;
 }
-.status.delivered {
+.status.approved {
     padding: 2px 4px;
     background: var(--green);
     color: var(--white);
@@ -306,7 +307,7 @@ body {
 }
 .status.pending {
     padding: 2px 4px;
-    background: var(--red);
+    background: var(--yellow);
     color: var(--white);
     border-radius: 4px;
     font-size: 14px;
@@ -380,7 +381,7 @@ body {
     }
     .cardBox
     {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(1,1fr);
     }
 }
 @media (max-width: 768px)

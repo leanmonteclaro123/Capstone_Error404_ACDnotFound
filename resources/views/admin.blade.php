@@ -87,41 +87,31 @@
             <div class="cardBox">
                 <div class="card">
                     <div>
-                        <div class="numbers">1,504</div>
-                        <div class="cardName">Daily views</div>
+                        <div class="numbers">123</div>
+                        <div class="cardName">Registries</div>
                     </div>
                     <div class="iconBx">
-                        <ion-icon name="eye-outline"></ion-icon>
+                        <ion-icon name="people-outline"></ion-icon>
                     </div>
                 </div>
 
                 <div class="card">
                     <div>
                         <div class="numbers">80</div>
-                        <div class="cardName">Sales</div>
+                        <div class="cardName">Requests</div>
                     </div>
                     <div class="iconBx">
-                        <ion-icon name="cart-outline"></ion-icon>
+                        <ion-icon name="document-attach-outline"></ion-icon>
                     </div>
                 </div>
 
                 <div class="card">
                     <div>
-                        <div class="numbers">284</div>
-                        <div class="cardName">Comments</div>
+                        <div class="numbers">12</div>
+                        <div class="cardName">Pending</div>
                     </div>
                     <div class="iconBx">
-                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">$7,842</div>
-                        <div class="cardName">Earning</div>
-                    </div>
-                    <div class="iconBx">
-                        <ion-icon name="cash-outline"></ion-icon>
+                        <ion-icon name="alert-circle-outline"></ion-icon>
                     </div>
                 </div>
             </div>
@@ -137,7 +127,7 @@
                         <thead>
                             <tr>
                                 <td>Name</td>
-                                <td>Prive</td>
+                                <td>Price</td>
                                 <td>Payment</td>
                                 <td>Status</td>
                             </tr>
@@ -145,76 +135,76 @@
                         <tbody>
                             <tr>
                                 <td>Lean Alegre</td>
-                                <td>$1200</td>
+                                <td>₱150</td>
                                 <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
+                                <td><span class="status approved">Approved</span></td>
                             </tr>
                             <tr>
                                 <td>Andrea Cantos</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
+                                <td>₱150</td>
+                                <td>Paid</td>
+                                <td><span class="status approved">Approved</span></td>
                             </tr>
                             <tr>
                                 <td>John Steven De Borja</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
+                                <td>₱150</td>
+                                <td>Pending</td>
+                                <td><span class="status pending">Pending</span></td>
                             </tr>
                             <tr>
                                 <td>jucint Jim Sanchez</td>
-                                <td>$1200</td>
+                                <td>₱150</td>
                                 <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
+                                <td><span class="status approved">Approved</span></td>
                             </tr>
                             <tr>
                                 <td>Jay-ar Destreza</td>
-                                <td>$1200</td>
+                                <td>₱150</td>
                                 <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
+                                <td><span class="status approved">Approved</span></td>
                             </tr>
                             <tr>
                                 <td>Cherry mae Castro</td>
-                                <td>$1200</td>
+                                <td>₱150</td>
                                 <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
+                                <td><span class="status approved">Approved</span></td>
                             </tr>
                             <tr>
                                 <td>Nherilyn Panaligan</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
+                                <td>₱150</td>
+                                <td>Pending</td>
+                                <td><span class="status pending">Pending</span></td>
                             </tr>
                             <tr>
                                 <td>Clara Consigo</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
+                                <td>₱150</td>
+                                <td>Pending</td>
+                                <td><span class="status pending">Pending</span></td>
                             </tr>
                             <tr>
                                 <td>Ervin Mendoza</td>
-                                <td>$1200</td>
+                                <td>₱150</td>
                                 <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
+                                <td><span class="status approved">Approved</span></td>
                             </tr>
                             <tr>
                                 <td>Brix Jeriz</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
+                                <td>₱150</td>
+                                <td>Pending</td>
+                                <td><span class="status pending">Pending</span></td>
                             </tr>
                             <tr>
                                 <td>Shenny Cornado</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
+                                <td>₱150</td>
+                                <td>Pending</td>
+                                <td><span class="status pending">Pending</span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="recentCustomers">
                     <div class="cardHeader">
-                        <h2>Recent Registries</h2>
+                        <h2>Recent</h2>
                     </div>
                     <table>
                         <tr>
