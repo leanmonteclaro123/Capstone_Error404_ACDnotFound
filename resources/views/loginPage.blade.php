@@ -52,17 +52,17 @@
             <!-- Login Form -->
             <div class="login-container" id="login">
                 <div class="top">
-                    <span>Don’t have an account? <a href="#" onclick="showRegister()">Sign Up</a></span>
+                    <span>Don't have an account? <a href="#" onclick="showRegister()">Sign Up</a></span>
                     <header>Login</header>
                 </div>
-                <form action="/admin" method="POST">
+                <form action="{{route('login.post')}}" method="POST">
                     @csrf
                     <div class="input-box">
-                        <input type="text" class="input-field" placeholder="Username" required>
+                        <input name="username" type="text" class="input-field" placeholder="Username" required>
                         <i><ion-icon name="person-outline"></ion-icon></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" class="input-field" placeholder="Password" required>
+                        <input name="password" type="password" class="input-field" placeholder="Password" required>
                         <i><ion-icon name="lock-closed-outline"></ion-icon></i>
                     </div>
                     <div class="input-box">

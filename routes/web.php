@@ -8,14 +8,9 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::get('/showregister', [AuthController::class, 'showRegisterForm'])->name('showregister');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 
-Route::get('/home', function () {
-    return view('home');
-})->middleware('auth');
-
-Route::get('/admin', function(){
-    return view ('admin');
-});
+Route::get('/admin', function () {return view('admin');})->middleware('auth');
+Route::get('/register', function () {return view('register');});

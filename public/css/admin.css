@@ -10,9 +10,10 @@
     --grey: #f5f5f5;
     --black1: #222;
     --black2: #999;
-    --red: #f00;
     --green:#21bb13;
     --yellow: #f5f529d3;
+    --red: hsl(0, 55%, 50%);
+    --dark: hsl(220, 24%, 15%);
 }
 body {
     min-height: 100vh;

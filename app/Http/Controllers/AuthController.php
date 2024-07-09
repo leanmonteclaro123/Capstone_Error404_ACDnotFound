@@ -25,8 +25,8 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
-            'username' => 'required|string|max:255|unique:loginmodels',
-            'email' => 'required|string|email|max:255|unique:loginmodels',
+            'username' => 'required|string|max:255|unique:loginModel',
+            'email' => 'required|string|email|max:255|unique:loginModel',
             'password' => 'required|string|min:8',
         ]);
 
@@ -34,7 +34,7 @@ class AuthController extends Controller
             return response()->json($validator->errors(),404);
         }
 
-        $loginmodels = loginModel::create([
+        $loginModel = loginModel::create([
             'firstname' => $request->firstname,
             'lastname' => $request->lastname,
             'username' => $request->username,
@@ -50,7 +50,7 @@ class AuthController extends Controller
         $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('home');
+            return redirect()->intended('/admin');
         }
 
         return redirect()->back()->withErrors(['username' => 'The provided credentials do not match our records.']);
