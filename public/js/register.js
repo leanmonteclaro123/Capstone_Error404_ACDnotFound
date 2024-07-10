@@ -12,4 +12,40 @@ const showMenu = (toggleId, navId) =>{
     })
  }
  
- showMenu('nav-toggle','nav-menu')
+ showMenu('nav-toggle','nav-menu'
+ )
+
+
+ document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.nav__link[data-target]');
+    const dropdown__link = document.querySelectorAll('.dropdown__link[data-target]');
+    const sections = document.querySelectorAll('.home-section');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-target');
+            sections.forEach(section => {
+                if (section.id === targetId) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    dropdown__link.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-target');
+            sections.forEach(section => {
+                if (section.id === targetId) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        });
+    });
+});
