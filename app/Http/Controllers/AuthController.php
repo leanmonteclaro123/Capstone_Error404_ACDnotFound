@@ -20,29 +20,55 @@ class AuthController extends Controller
         return view('loginPage');
     }
 
+    // public function register(Request $request)
+    // {
+    //     $validator = Validator::make($request->all(), [
+    //         'firstname' => 'required|string|max:255',
+    //         'lastname' => 'required|string|max:255',
+    //         'username' => 'required|string|max:255|unique:loginmodels',
+    //         'email' => 'required|string|email|max:255|unique:loginmodels',
+    //         'password' => 'required|string|min:8',
+    //     ]);
+
+    //     if ($validator->fails()) {
+    //         return response()->json($validator->errors(),404);
+    //     }
+
+    //     $loginModel = loginModel::create([
+    //         'firstname' => $request->firstname,
+    //         'lastname' => $request->lastname,
+    //         'username' => $request->username,
+    //         'email' => $request->email,
+    //         'password' => Hash::make($request->password),
+    //     ]);
+
+    //     return redirect()->route('login')->with('success', 'Registration successful. Please login.');
+    // }
+
+    
     public function register(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'firstname' => 'required|string|max:255',
-            'lastname' => 'required|string|max:255',
-            'username' => 'required|string|max:255|unique:loginModel',
-            'email' => 'required|string|email|max:255|unique:loginModel',
-            'password' => 'required|string|min:8',
-        ]);
+    $validator = Validator::make($request->all(), [
+        'firstname' => 'required|string|max:255',
+        'lastname' => 'required|string|max:255',
+        'username' => 'required|string|max:255|unique:loginmodels',
+        'email' => 'required|string|email|max:255|unique:loginmodels',
+        'password' => 'required|string|min:8',
+    ]);
 
-        if ($validator->fails()) {
-            return response()->json($validator->errors(),404);
-        }
+    if ($validator->fails()) {
+        return redirect()->route('showRegisterForm')->withErrors($validator)->withInput()->with('register_error', 'Registration failed.');
+    }
 
-        $loginModel = loginModel::create([
-            'firstname' => $request->firstname,
-            'lastname' => $request->lastname,
-            'username' => $request->username,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+    $loginModel = loginModel::create([
+        'firstname' => $request->firstname,
+        'lastname' => $request->lastname,
+        'username' => $request->username,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+    ]);
 
-        return redirect()->route('login')->with('success', 'Registration successful. Please login.');
+    return redirect()->route('showLoginForm')->with('register_success', 'Registration successful. Please login.');
     }
 
     public function login(Request $request)
@@ -50,9 +76,10 @@ class AuthController extends Controller
         $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/admin');
+            return redirect()->intended('/admin')->with('login_success', 'Login successful.');
         }
 
-        return redirect()->back()->withErrors(['username' => 'The provided credentials do not match our records.']);
+        return redirect()->back()->withErrors(['username' => 'The provided credentials do not match our records.'])->withInput()->with('login_error', 'Login failed.');
     }
+
 }

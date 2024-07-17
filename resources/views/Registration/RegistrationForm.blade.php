@@ -1,71 +1,79 @@
-<link rel="stylesheet" href="{{asset('css/registrationform.css')}}">
+    <link rel="stylesheet" href="{{asset('css/registrationform.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 <div class="container home-section" id="registration" style="display: none">
 <br><br>
 <div class="registercontainer">
     <div class="registrationheader">
-        <p><img class="qq" src="/images/bsu_logo.png"><strong>Reference No:</strong> BatStateU-FO-SEC-04 &nbsp;&nbsp; <strong>Effectivity Date:</strong> May 18, 2022 &nbsp;&nbsp; <strong>Revision No:</strong> 02</p>
         <h3>VEHICLE REGISTRATION FORM</h3>
     </div>
+    <div class="two-form">
+        <div class="section1">
+            <h4>Vehicle 1</h4>
+            <div class="form-group">
+                <label for="license-plate-number">License Plate No.:</label>
+                <input type="text" id="license-plate-number" name="license-plate-number" required>
+            </div>
+            <div class="form-group">
+                <label for="province">Province/State:</label>
+                <input type="text" id="province" name="province">
+            </div>
+            <div class="form-group">
+                <label for="make-model">Make/Model:</label>
+                <input type="text" id="make-model" name="make-model">
+            </div>
+            <div class="form-group">
+                <label for="year-color">Year/Color:</label>
+                <input type="text" id="year-color" name="year-color">
+            </div>
+        </div>
 
-    <div class="section">
-        <div class="form-group">
-            <label for="old-sticker-number">Old Sticker Number (renewal only):</label>
-            <input type="text" id="old-sticker-number" name="old-sticker-number">
-        </div>
-        <div class="form-group">
-            <label for="license-plate-number">License Plate No.:</label>
-            <input type="text" id="license-plate-number" name="license-plate-number">
-        </div>
-        <div class="form-group">
-            <label for="province">Province/State:</label>
-            <input type="text" id="province" name="province">
-        </div>
-        <div class="form-group">
-            <label for="make-model">Make/Model:</label>
-            <input type="text" id="make-model" name="make-model">
-        </div>
-        <div class="form-group">
-            <label for="year-color">Year/Color:</label>
-            <input type="text" id="year-color" name="year-color">
+        <div class="section1">
+            <h4>Vehicle 2 (Optional)</h4>
+            <div class="form-group">
+                <label for="license-plate-number-2">License Plate No.:</label>
+                <input type="text" id="license-plate-number-2" name="license-plate-number-2">
+            </div>
+            <div class="form-group">
+                <label for="province-2">Province/State:</label>
+                <input type="text" id="province-2" name="province-2">
+            </div>
+            <div class="form-group">
+                <label for="make-model-2">Make/Model:</label>
+                <input type="text" id="make-model-2" name="make-model-2">
+            </div>
+            <div class="form-group">
+                <label for="year-color-2">Year/Color:</label>
+                <input type="text" id="year-color-2" name="year-color-2">
+            </div>
         </div>
     </div>
 
     <div class="section">
         <div class="form-group">
-            <label for="old-sticker-number-2">Old Sticker Number (renewal only):</label>
-            <input type="text" id="old-sticker-number-2" name="old-sticker-number-2">
+            <label for="campus">Campus:</label>
+            <input type="text" id="campus" name="campus">
         </div>
-        <div class="form-group">
-            <label for="license-plate-number-2">License Plate No.:</label>
-            <input type="text" id="license-plate-number-2" name="license-plate-number-2">
-        </div>
-        <div class="form-group">
-            <label for="province-2">Province/State:</label>
-            <input type="text" id="province-2" name="province-2">
-        </div>
-        <div class="form-group">
-            <label for="make-model-2">Make/Model:</label>
-            <input type="text" id="make-model-2" name="make-model-2">
-        </div>
-        <div class="form-group">
-            <label for="year-color-2">Year/Color:</label>
-            <input type="text" id="year-color-2" name="year-color-2">
-        </div>
-    </div>
 
-    <div class="section">
-        <div class="form-group">
-            <label>Campus:</label>
-            <input type="text" name="campus">
+        <div class="two-box">
+            <div class="form-group">
+                <label for="faculty-id">Faculty/Employee ID No.:</label>
+                <input type="text" id="faculty-id" name="faculty-id">
+            </div>
+            <div class="form-group">
+                <label for="student-id">Student ID No.:</label>
+                <input type="text" id="student-id" name="student-id">
+            </div>
         </div>
+
         <div class="form-group checkbox-group">
             <label>Role:</label>
-            <label><input type="checkbox" name="role" value="Faculty/Employee"> Faculty/Employee</label>
-            <label><input type="checkbox" name="role" value="Student"> Student</label>
-            <label><input type="checkbox" name="role" value="Parent"> Parent</label>
-            <label><input type="checkbox" name="role" value="Others"> Others, please specify:</label>
+            <label><input type="checkbox" name="role" value="Faculty/Employee" class="role-checkbox"> Faculty/Employee</label>
+            <label><input type="checkbox" name="role" value="Student" class="role-checkbox"> Student</label>
+            <label><input type="checkbox" name="role" value="Parent" class="role-checkbox"> Parent</label>
+            <label><input type="checkbox" name="role" value="Others" class="role-checkbox"> Others, please specify:</label>
             <input type="text" name="role-other">
         </div>
+
         <div class="form-group">
             <label for="full-name">Full Name:</label>
             <input type="text" id="full-name" name="full-name">
@@ -109,44 +117,203 @@
             <label for="permanent-address">Permanent Address:</label>
             <input type="text" id="permanent-address" name="permanent-address">
         </div>
-    </div>
-
-    <div class="section">
-        <p>
-            I hereby certify that information provided herein are true and correct to the best of my knowledge and belief and agree to abide University's Traffic, Parking and Security Rules and Regulations.
-        </p>
         <div class="form-group">
-            <label for="signature">Signature over Printed Name of Applicant:</label>
-            <input type="text" id="signature" name="signature">
+            <label for="city-2">City:</label>
+            <input type="text" id="city-2" name="city-2">
         </div>
         <div class="form-group">
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date">
+            <label for="province-2">Province:</label>
+            <input type="text" id="province-2" name="province-2">
         </div>
     </div>
 
-    <div class="footer">
-        <div>
-            <div class="form-group">
-                <label for="processed-by">Processed and Reviewed by:</label>
-                <input type="text" id="processed-by" name="processed-by" value="Ms. ANA JEAN J. MARANAN" readonly>
-                <p>Head, General Services</p>
+    <div class="upload-container">
+        <div class="upload-file">
+            <div class="upload-grid">
+                <div class="upload-group" data-label="OR">
+                    <input type="file" id="or">
+                    <label for="or">
+                        <i class="fas fa-upload"></i>
+                        <span>Upload OR</span>
+                    </label>
+                    <button class="remove-btn" onclick="removeFile(this)">Remove</button>
+                </div>
+                <div class="upload-group" data-label="CR">
+                    <input type="file" id="cr">
+                    <label for="cr">
+                        <i class="fas fa-upload"></i>
+                        <span>Upload CR</span>
+                    </label>
+                    <button class="remove-btn" onclick="removeFile(this)">Remove</button>
+                </div>
+            </div>
+            <div class="upload-group full-width" data-label="Driver License">
+                <input type="file" id="dl">
+                <label for="dl">
+                    <i class="fas fa-upload"></i>
+                    <span>Upload Driver License</span>
+                </label>
+                <button class="remove-btn" onclick="removeFile(this)">Remove</button>
             </div>
         </div>
-        <div>
-            <div class="form-group">
-                <label for="approved-by">Approved by:</label>
-                <input type="text" id="approved-by" name="approved-by" value="Ms. JOSEPHINE D. VERGARA" readonly>
-                <p>Vice Chancellor, Administration and Finance</p>
-            </div>
+        <div class="footer">
+            <button type="submit" class="btn btn-primary" onclick="submitForm()">Submit</button>
         </div>
     </div>
 
-    <div class="privacy-notice">
-        <p>
-            Pursuant to Republic Act No. 10173, also known as the Data Privacy Act of 2012, the Batangas State University recognizes its commitment to protect and respect the privacy of its customers and/or stakeholders and ensure that all information collected from them are all processed in accordance with the principles of transparency, legitimate purpose and proportionality mandated under the Data Privacy Act of 2012.
-            The information collected on this registration form will be used for the purposes of validating vehicle registration and will be accessible to Security Services Office in the performance of their duties.
-        </p>
+    <!-- Modal for full-size image view -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
     </div>
 </div>
-</div>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const roleCheckboxes = document.querySelectorAll('.role-checkbox');
+        roleCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                roleCheckboxes.forEach(box => {
+                    if (box !== checkbox) box.checked = false;
+                });
+            });
+        });
+    });
+
+    //upload file
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const inputs = document.querySelectorAll('.upload-group input[type="file"]');
+    
+    inputs.forEach(input => {
+        input.addEventListener('change', function() {
+            const file = this.files[0];
+            
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    const label = input.nextElementSibling; // Get the label element
+                    label.innerHTML = ''; // Clear the label text
+                    
+                    // Create and style the image element
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.alt = file.name;
+                    
+                    // Append the image to the label
+                    label.appendChild(img);
+                    
+                    // Add click listener to enable full-size view
+                    img.addEventListener('click', function() {
+                        const modal = document.getElementById('modal');
+                        const modalImg = document.getElementById('modal-img');
+                        modal.style.display = 'block';
+                        modalImg.src = this.src;
+                    });
+                };
+                
+                // Read the uploaded file as a data URL
+                reader.readAsDataURL(file);
+            }
+        });
+    });
+
+    // Get the modal
+    const modal = document.getElementById('modal');
+
+    // Get the <span> element that closes the modal
+    const span = document.getElementsByClassName('close')[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    // When the user clicks anywhere outside of the modal image, close it
+    modal.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+});
+
+function submitForm() {
+    // Handle form submission logic here if needed
+    alert('Form submitted!');
+}
+
+function removeFile(button) {
+    const uploadGroup = button.parentElement;
+    const input = uploadGroup.querySelector('input[type="file"]');
+    const label = uploadGroup.querySelector('label');
+    
+    // Clear the input value
+    input.value = '';
+    
+    // Restore the default label content
+    label.innerHTML = `
+        <i class="fas fa-upload"></i>
+        <span>${label.getAttribute('for')}</span>
+    `;
+    
+    // Hide the remove button
+    button.style.display = 'none';
+    
+    // Reattach the event listener to handle file changes
+    input.addEventListener('change', handleFileUpload);
+}
+
+function handleFileUpload(event) {
+    const file = event.target.files[0];
+    const label = event.target.nextElementSibling;
+    const uploadGroup = event.target.parentElement;
+    const removeBtn = uploadGroup.querySelector('.remove-btn');
+    
+    if (file) {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            // Create and style the image element
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.alt = file.name;
+            
+            // Clear the label and append the image
+            label.innerHTML = '';
+            label.appendChild(img);
+            
+            // Show the remove button
+            removeBtn.style.display = 'inline-block';
+            
+            // Add click listener to enable full-size view
+            img.addEventListener('click', function() {
+                const modal = document.getElementById('modal');
+                const modalImg = document.getElementById('modal-img');
+                modal.style.display = 'block';
+                modalImg.src = this.src;
+            });
+        };
+        
+        // Read the uploaded file as a data URL
+        reader.readAsDataURL(file);
+    } else {
+        // If no file is selected, hide the remove button and restore default label
+        label.innerHTML = `
+            <i class="fas fa-upload"></i>
+            <span>${label.getAttribute('for')}</span>
+        `;
+        
+        removeBtn.style.display = 'none';
+    }
+}
+
+// Attach initial event listeners to file inputs
+document.querySelectorAll('.upload-group input[type="file"]').forEach(input => {
+    input.addEventListener('change', handleFileUpload);
+});
+
+
+
+</script>

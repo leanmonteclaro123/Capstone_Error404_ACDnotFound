@@ -15,6 +15,11 @@
     --red: hsl(0, 55%, 50%);
     --dark: hsl(220, 24%, 15%);
 }
+.img{
+    width: 70%;
+    height: 70%;
+    margin-top: 15px;
+}
 body {
     min-height: 100vh;
     overflow-x: hidden;
@@ -27,10 +32,13 @@ body {
     position: fixed;
     width: 300px;
     height: 100%;
-    background:var(--black2) ;
-    border-left: 10px solid var(--black2);
+    background:var(--blue) ;
+    border-left: 10px solid var(--blue);
     transition: 0.5s;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .navigation.active{
     width: 80px;
@@ -115,6 +123,12 @@ body {
     box-shadow: 35px -35px 0 10px var(--white);
     pointer-events: none;
 }
+/* bottom navigation */
+.bottom-nav {
+    margin-top: auto;
+    width: 100%;
+}
+
 /* search and menu */
 .main {
     position: absolute;
@@ -309,7 +323,7 @@ body {
 .status.pending {
     padding: 2px 4px;
     background: var(--yellow);
-    color: var(--white);
+    color: var (--white);
     border-radius: 4px;
     font-size: 14px;
     font-weight: 500;
@@ -356,6 +370,12 @@ body {
 }
 .recentCustomers table tr:hover td h4 span {
     color: var(--white);
+}
+.content {
+    display: none;
+}
+.content.active {
+    display: block;
 }
 
 /* reponsive design */
@@ -438,4 +458,3 @@ body {
         color: var(--white);
     }
 }
-

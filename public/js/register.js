@@ -49,3 +49,32 @@ const showMenu = (toggleId, navId) =>{
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav__link');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        // Remove 'active' class from all links
+        navLinks.forEach(link => link.classList.remove('active'));
+        
+        // Add 'active' class to the clicked link
+        this.classList.add('active');
+        
+        // Optional: Prevent default anchor behavior if needed
+        // event.preventDefault();
+        
+        // Scroll to the target section
+        const targetId = this.getAttribute('data-target');
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  });
+
+
+  
+  
+  
