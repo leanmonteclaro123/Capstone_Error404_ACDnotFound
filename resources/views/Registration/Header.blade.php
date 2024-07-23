@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="{{asset('css/register.css')}}">
+<link rel="stylesheet" href="{{ asset('css/register.css') }}">
+
 <header class="header">
     <nav class="nav container">
         <div class="nav__data">
@@ -17,12 +18,11 @@
             <ul class="nav__list">
                 <li><a href="#" class="nav__link" data-target="abt_us">Home</a></li>
                 
-
+        
                 <!--=============== DROPDOWN 1 ===============-->
                 <li class="dropdown__item" id="dropdown1">
                     <div class="nav__link">
                         Registration<i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                        
                     </div>
 
                     <ul class="dropdown__menu">
@@ -31,10 +31,8 @@
                                 <i class="ri-pie-chart-line"></i> Registration
                             </a>                          
                         </li>
-                        
-
                         <li>
-                            <a href="#" class="dropdown__link">
+                            <a href="#" class="dropdown__link" data-target="renewal">
                                 <i class="ri-arrow-up-down-line"></i> Renewal
                             </a>
                         </li>
@@ -51,13 +49,11 @@
                                         <i class="ri-file-list-line"></i> Documents
                                     </a>
                                 </li>
-
                                 <li>
                                     <a href="#" class="dropdown__sublink">
                                         <i class="ri-cash-line"></i> Payments
                                     </a>
                                 </li>
-
                                 <li>
                                     <a href="#" class="dropdown__sublink">
                                         <i class="ri-refund-2-line"></i> Refunds
@@ -86,7 +82,6 @@
                                 <i class="ri-lock-line"></i> Accounts
                             </a>
                         </li>
-
                         <li>
                             <a href="#" class="dropdown__link">
                                 <i class="ri-message-3-line"></i> Messages
