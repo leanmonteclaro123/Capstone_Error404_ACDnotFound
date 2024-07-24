@@ -104,6 +104,9 @@
                  </div>
                  <form action="{{ route('register') }}" method="POST">
                      @csrf
+                     <div class="role" style="display: none">
+                        <input name="Role" type="text" value="User">
+                     </div>
                      <div class="two-forms">
                          <div class="input-box">
                              <input name="firstname" type="text" class="input-field" placeholder="Firstname" required value="{{ old('firstname') }}">

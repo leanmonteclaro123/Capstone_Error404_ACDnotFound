@@ -56,7 +56,11 @@
                     </a>
                 </li>
                 <li data-target="signout">
-                    <a href="#">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <span class="icon"><ion-icon name="log-out"></ion-icon></span>
                         <span class="title">Sign out</span>
                     </a>
@@ -226,10 +230,6 @@
                 <!-- Add your settings content here -->
             </div>
 
-            <div id="signout" class="content">
-                <h2>Sign Out Content</h2>
-                <!-- Add your sign out content here -->
-            </div>
         </div>
     </div>
 

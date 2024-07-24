@@ -17,8 +17,7 @@
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
                 <li><a href="#" class="nav__link" data-target="abt_us">Home</a></li>
-                
-        
+
                 <!--=============== DROPDOWN 1 ===============-->
                 <li class="dropdown__item" id="dropdown1">
                     <div class="nav__link">
@@ -64,33 +63,41 @@
                     </ul>
                 </li>
 
-                <!--=============== DROPDOWN 2 ===============-->
+                <li><a href="#" class="nav__link" data-target="contact_us">Contact</a></li>
+
+                @auth
+                <!--=============== USER DROPDOWN ===============-->
                 <li class="dropdown__item">
                     <div class="nav__link">
-                        Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        {{ Auth::user()->username }} <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                     </div>
 
                     <ul class="dropdown__menu">
                         <li>
                             <a href="#" class="dropdown__link">
-                                <i class="ri-user-line"></i> Profiles
+                                <i class="ri-user-line"></i> Profile
                             </a>                          
                         </li>
 
                         <li>
                             <a href="#" class="dropdown__link">
-                                <i class="ri-lock-line"></i> Accounts
+                                <i class="ri-lock-line"></i> Account
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="dropdown__link">
-                                <i class="ri-message-3-line"></i> Messages
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                            <a href="{{ route('logout') }}" class="dropdown__link"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="ri-logout-box-line"></i> Signout
                             </a>
                         </li>
                     </ul>
                 </li>
-
-                <li><a href="#" class="nav__link" data-target="contact_us">Contact</a></li>
+                @else
+                <li><a href="{{ route('login') }}" class="nav__link">Login</a></li>
+                @endauth
             </ul>
         </div>
     </nav>

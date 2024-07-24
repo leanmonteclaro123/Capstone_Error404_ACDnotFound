@@ -3,7 +3,9 @@
 @section('title', 'Register')
 
 @section('content')
+
 <section class="home-content">
+    <!--=======HOME CONTENT =======-->
     <div class="container-fluid p-0 home-section" id="abt_us">
         <div id="aboutUsCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -40,12 +42,16 @@
             research and innovation. We offer a range of programs designed
             to meet the needs of our diverse student body.
         </p>
-        <img src="{{ asset('images/batstate.jpg') }}" alt="University Image">
+        <img class="home-img" src="{{ asset('images/batstate.jpg') }}" alt="University Image">
     </div>
+
+    <!--=======CONTACT US=======-->
     <div class="container home-section" id="contact_us" style="display: none">
         <h2>Contact Us</h2>
         <p>If you have any questions or need further information, please feel free to contact us at info@batangasstate.edu.ph or call us at (043) 980-0385.</p>
     </div>
+
+    <!--=======REGISTRATION FORM=======-->
     <div class="container home-section" id="registration" style="display: none"> 
         <br><br>
         <div class="registercontainer">
@@ -178,7 +184,7 @@
                 <div class="upload-file">
                     <div class="upload-grid">
                         <div class="upload-group" data-label="OR-reg">
-                            <input type="file" id="or-reg" data-label="Upload OR">
+                            <input type="file" id="or-reg" data-label="Upload OR" required>
                             <label for="or-reg">
                                 <i class="fas fa-upload"></i>
                                 <span>Upload OR</span>
@@ -186,7 +192,7 @@
                             <button class="remove-btn" onclick="removeFile(this)">Remove</button>
                         </div>
                         <div class="upload-group" data-label="CR-reg">
-                            <input type="file" id="cr-reg" data-label="Upload CR">
+                            <input type="file" id="cr-reg" data-label="Upload CR" required>
                             <label for="cr-reg">
                                 <i class="fas fa-upload"></i>
                                 <span>Upload CR</span>
@@ -194,7 +200,7 @@
                             <button class="remove-btn" onclick="removeFile(this)">Remove</button>
                         </div>
                         <div class="upload-group full-width" data-label="Driver_License-reg">
-                            <input type="file" id="dl-reg" data-label="Upload Driver License">
+                            <input type="file" id="dl-reg" data-label="Upload Driver License" required>
                             <label for="dl-reg">
                                 <i class="fas fa-upload"></i>
                                 <span>Upload Driver License</span>
@@ -217,6 +223,7 @@
         </div>
     </div>
 
+    <!--=======RENEWAL FORM=======-->
     <div class="container home-section" id="renewal" style="display: none">
         <br><br>
         <div class="renew-container">
@@ -348,7 +355,7 @@
                 <div class="upload-file">
                     <div class="upload-grid">
                         <div class="upload-group" data-label="OR-renew">
-                            <input type="file" id="or-renew" data-label="Upload OR">
+                            <input type="file" id="or-renew" data-label="Upload OR" required>
                             <label for="or-renew">
                                 <i class="fas fa-upload"></i>
                                 <span>Upload OR</span>
@@ -356,7 +363,7 @@
                             <button class="remove-btn" onclick="removeFile(this)">Remove</button>
                         </div>
                         <div class="upload-group" data-label="CR-renew">
-                            <input type="file" id="cr-renew" data-label="Upload CR">
+                            <input type="file" id="cr-renew" data-label="Upload CR" required>
                             <label for="cr-renew">
                                 <i class="fas fa-upload"></i>
                                 <span>Upload CR</span>
@@ -364,7 +371,7 @@
                             <button class="remove-btn" onclick="removeFile(this)">Remove</button>
                         </div>
                         <div class="upload-group full-width" data-label="Driver_License-renew">
-                            <input type="file" id="dl-renew" data-label="Upload Driver License">
+                            <input type="file" id="dl-renew" data-label="Upload Driver License" required>
                             <label for="dl-renew">
                                 <i class="fas fa-upload"></i>
                                 <span>Upload Driver License</span>
@@ -389,13 +396,14 @@
     </div>
  
 </section>
+
+<!--=======STYLESHEET=======-->
 <link rel="stylesheet" href="{{asset('css/register.css')}}">
 <link rel="stylesheet" href="{{asset('css/renewal.css')}}">
-
 <link rel="stylesheet" href="{{asset('css/registrationform.css')}}">
+
+<!--========SCRIPTS=========-->
 <script src="{{ asset('js/register.js') }}"></script>
 <script src="{{ asset('js/formupload.js') }}"></script>
-
-
 
 @endsection
