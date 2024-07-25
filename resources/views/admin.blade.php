@@ -121,8 +121,115 @@
                 </div>
             </div>
 
+            <!--Requests-->
             <div id="requests" class="content">
                 <h2>Requests Content</h2>
+
+                <div class="details">
+                    <div class="recentOrders">
+                        <div class="cardHeader">
+                            <h2>Registries status</h2>
+                            <a href="#" class="btn">View all</a>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>License Plate Number</td>
+                                    <td>Province</td>
+                                    <td>Make Model</td>
+                                    <td>year Color</td>
+
+                                    <td>Campus</td>
+                                    <td>Student ID</td>
+                                    <td>Role</td>
+                                    <td>Full name</td>
+                                    <td>Current Address</td>
+                                    <td>City</td>
+                                    <td>Province</td>
+                                    <td>Postal Code</td>
+                                    <td>Telephone</td>
+
+                                    <td>Registered Owner Name</td>
+                                    <td>Permanent Address</td>
+                                    <td>City</td>
+                                    <td>Province</td>
+
+                                    <td>Official Reciept</td>
+                                    <td>Certificate Reciept</td>
+                                    <td>Driver License</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Lean Alegre</td>
+                                    <td>₱150</td>
+                                    <td>Paid</td>
+                                    <td><span class="status approved">Approved</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Andrea Cantos</td>
+                                    <td>₱150</td>
+                                    <td>Paid</td>
+                                    <td><span class="status approved">Approved</span></td>
+                                </tr>
+                                <tr>
+                                    <td>John Steven De Borja</td>
+                                    <td>₱150</td>
+                                    <td>Pending</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>jucint Jim Sanchez</td>
+                                    <td>₱150</td>
+                                    <td>Paid</td>
+                                    <td><span class="status approved">Approved</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Jay-ar Destreza</td>
+                                    <td>₱150</td>
+                                    <td>Paid</td>
+                                    <td><span class="status approved">Approved</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Cherry mae Castro</td>
+                                    <td>₱150</td>
+                                    <td>Paid</td>
+                                    <td><span class="status approved">Approved</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Nherilyn Panaligan</td>
+                                    <td>₱150</td>
+                                    <td>Pending</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Clara Consigo</td>
+                                    <td>₱150</td>
+                                    <td>Pending</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Ervin Mendoza</td>
+                                    <td>₱150</td>
+                                    <td>Paid</td>
+                                    <td><span class="status approved">Approved</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Brix Jeriz</td>
+                                    <td>₱150</td>
+                                    <td>Pending</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Shenny Cornado</td>
+                                    <td>₱150</td>
+                                    <td>Pending</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 <!-- Add your requests content here -->
             </div>
 

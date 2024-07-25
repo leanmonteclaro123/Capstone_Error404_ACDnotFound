@@ -89,9 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
         delete fileStates[input.id]; // Remove the file state
     };
 
-    window.submitForm = function() {
-        alert('Form submitted!');
-    };
 
     // Reload the file state after the DOM is loaded
     window.addEventListener('load', function() {

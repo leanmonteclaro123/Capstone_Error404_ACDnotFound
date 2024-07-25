@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\VehicleRegistrationController;
+
 
 Route::get('/', function () {
     return view('loginPage');
@@ -22,3 +24,6 @@ Route::get('/register', function () {
 
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::post('/vehicle-registration', [VehicleRegistrationController::class, 'store'])->name('vehicle.registration.store');
+

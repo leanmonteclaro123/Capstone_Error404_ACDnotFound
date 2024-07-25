@@ -24,7 +24,7 @@
 }
 .two-box{
     display: flex;
-    gap: 10%;
+    gap: 1%;
     box-sizing: border-box; 
 }
 .two-box input{
