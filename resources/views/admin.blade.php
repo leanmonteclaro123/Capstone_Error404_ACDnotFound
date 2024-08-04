@@ -123,111 +123,75 @@
 
             <!--Requests-->
             <div id="requests" class="content">
-                <h2>Requests Content</h2>
-
                 <div class="details">
                     <div class="recentOrders">
                         <div class="cardHeader">
                             <h2>Registries status</h2>
                             <a href="#" class="btn">View all</a>
                         </div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <td>License Plate Number</td>
-                                    <td>Province</td>
-                                    <td>Make Model</td>
-                                    <td>year Color</td>
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Plate Number</th>
+                                        <th>Province</th>
+                                        <th>Make/Model</th>
+                                        <th>Year/Color</th>
+                                        <th>Campus</th>
+                                        <th>Identification</th>
+                                        <th>Role</th>
+                                        <th>Full Name</th>
+                                        <th>Current Address</th>
+                                        <th>City</th>
+                                        <th>Province</th>
+                                        <th>Postal Code</th>
+                                        <th>Telephone Cell</th>
+                                        <th>Telephone Home</th>
+                                        <th>Telephone Office</th>
+                                        <th>Owner Name</th>
+                                        <th>Permanent Address</th>
+                                        <th>City</th>
+                                        <th>Province</th>
+                                        <th>OR</th>
+                                        <th>CR</th>
+                                        <th>DL</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($registrations as $registration)
+                                        <tr>
+                                            <td>{{ $registration->loginID }}</td>
+                                            <td>{{ $registration->license_plate_number }}</td>
+                                            <td>{{ $registration->make_province }}</td>
+                                            <td>{{ $registration->make_model }}</td>
+                                            <td>{{ $registration->year_color }}</td>
+                                            <td>{{ $registration->campus }}</td>
+                                            <td>{{ $registration->identification }}</td>
+                                            <td>{{ $registration->role }}</td>
+                                            <td>{{ $registration->full_name }}</td>
+                                            <td>{{ $registration->current_address }}</td>
+                                            <td>{{ $registration->city }}</td>
+                                            <td>{{ $registration->province }}</td>
+                                            <td>{{ $registration->postal_code }}</td>
+                                            <td>{{ $registration->telephone_cell }}</td>
+                                            <td>{{ $registration->telephone_home }}</td>
+                                            <td>{{ $registration->telephone_office }}</td>
+                                            <td>{{ $registration->registered_owner_name }}</td>
+                                            <td>{{ $registration->permanent_address }}</td>
+                                            <td>{{ $registration->owner_city }}</td>
+                                            <td>{{ $registration->owner_province }}</td>
+                                            <td><img src="{{ asset('storage/' . $registration->OR) }}" alt="OR" width="100"></td>
+                                            <td><img src="{{ asset('storage/' . $registration->CR) }}" alt="CR" width="100"></td>
+                                            <td><img src="{{ asset('storage/' . $registration->DL) }}" alt="DL" width="100"></td>
+                                            <td><span class="status pending">Pending</span></td>
+                                        </tr>
 
-                                    <td>Campus</td>
-                                    <td>Student ID</td>
-                                    <td>Role</td>
-                                    <td>Full name</td>
-                                    <td>Current Address</td>
-                                    <td>City</td>
-                                    <td>Province</td>
-                                    <td>Postal Code</td>
-                                    <td>Telephone</td>
-
-                                    <td>Registered Owner Name</td>
-                                    <td>Permanent Address</td>
-                                    <td>City</td>
-                                    <td>Province</td>
-
-                                    <td>Official Reciept</td>
-                                    <td>Certificate Reciept</td>
-                                    <td>Driver License</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Lean Alegre</td>
-                                    <td>₱150</td>
-                                    <td>Paid</td>
-                                    <td><span class="status approved">Approved</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Andrea Cantos</td>
-                                    <td>₱150</td>
-                                    <td>Paid</td>
-                                    <td><span class="status approved">Approved</span></td>
-                                </tr>
-                                <tr>
-                                    <td>John Steven De Borja</td>
-                                    <td>₱150</td>
-                                    <td>Pending</td>
-                                    <td><span class="status pending">Pending</span></td>
-                                </tr>
-                                <tr>
-                                    <td>jucint Jim Sanchez</td>
-                                    <td>₱150</td>
-                                    <td>Paid</td>
-                                    <td><span class="status approved">Approved</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Jay-ar Destreza</td>
-                                    <td>₱150</td>
-                                    <td>Paid</td>
-                                    <td><span class="status approved">Approved</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Cherry mae Castro</td>
-                                    <td>₱150</td>
-                                    <td>Paid</td>
-                                    <td><span class="status approved">Approved</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Nherilyn Panaligan</td>
-                                    <td>₱150</td>
-                                    <td>Pending</td>
-                                    <td><span class="status pending">Pending</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Clara Consigo</td>
-                                    <td>₱150</td>
-                                    <td>Pending</td>
-                                    <td><span class="status pending">Pending</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Ervin Mendoza</td>
-                                    <td>₱150</td>
-                                    <td>Paid</td>
-                                    <td><span class="status approved">Approved</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Brix Jeriz</td>
-                                    <td>₱150</td>
-                                    <td>Pending</td>
-                                    <td><span class="status pending">Pending</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Shenny Cornado</td>
-                                    <td>₱150</td>
-                                    <td>Pending</td>
-                                    <td><span class="status pending">Pending</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <!-- Add your requests content here -->

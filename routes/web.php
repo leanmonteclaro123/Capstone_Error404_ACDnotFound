@@ -27,3 +27,4 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::post('/vehicle-registration', [VehicleRegistrationController::class, 'store'])->name('vehicle.registration.store');
 
+Route::get('/admins', [VehicleRegistrationController::class, 'index'])->middleware('auth');

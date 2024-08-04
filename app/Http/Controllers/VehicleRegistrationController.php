@@ -11,9 +11,18 @@ use Illuminate\Support\Facades\Validator;
 
 class VehicleRegistrationController extends Controller
 {
+    public function index()
+    {
+        // Fetch all vehicle registrations from the database
+        $registrations = VehicleRegistration::all();
+
+        // Pass the registrations to the view
+        return view('admin', ['registrations' => $registrations]);
+    }
+
     public function store(Request $request)
     {
-
+    
         $validator = Validator::make($request->all(), [
             'loginID'=>'required|integer|max:20',
             'license_plate_number' => 'required|string|max:255',
@@ -85,7 +94,7 @@ class VehicleRegistrationController extends Controller
     }
 
     public function showImage($id, $type)
-{
+    {
     $formSubmission = FormSubmission::findOrFail($id);
 
     $image = null;
@@ -105,6 +114,6 @@ class VehicleRegistrationController extends Controller
 
     return response($image, 200)
         ->header('Content-Type', 'application/octet-stream');
-}
+    }
 
 }
