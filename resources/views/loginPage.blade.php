@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="form-box shadow-lg p-4 bg-white rounded">
+        <div class="form-box shadow-lg p-4 rounded">
             <!-- Login Form -->
             <div class="login-container" id="login" style="display: block;">
                 <div class="top text-center mb-4">
@@ -32,7 +32,7 @@
                     <div class="d-grid">
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </div>
-                </form>
+                </form>                                
             </div>
 
             <!-- Register Form -->
@@ -41,9 +41,9 @@
                     <span>Already have an account? <a href="#" onclick="showLogin()">Log In</a></span>
                     <h1 class="h3">Sign Up</h1>
                 </div>
-                <form action="{{ route('register') }}" method="POST">
+                <form action="{{ route('register.post') }}" method="POST" onsubmit="return checkPassword(event)">
                     @csrf
-                    <input name="Role" type="hidden" value="User">
+                    <input name="Type" type="hidden" value="User">
                     <div class="row mb-3">
                         <div class="col-md-4 mb-3">
                             <div class="form-floating">
@@ -101,7 +101,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="form-floating">
-                                <select name="role" class="form-select" required>
+                                <select name="Role" class="form-select" id="Role" required>
                                     <option value="">Select Role</option>
                                     <option value="Student">Student</option>
                                     <option value="Faculty">Faculty</option>
@@ -114,7 +114,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="form-floating">
-                                <input name="id_no" type="text" class="form-control" placeholder="ID" required value="{{ old('id_no') }}">
+                                <input name="id_no" type="text" id="id_no" class="form-control" placeholder="ID" required value="{{ old('id_no') }}">
                                 <label for="id_no">ID</label>
                             </div>
                         </div>
@@ -141,14 +141,14 @@
                     <div class="row mb-3">
                         <div class="col-md-6 mb-3">
                             <div class="form-floating">
-                                <input name="password" type="password" class="form-control" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                                <input name="password" type="password" id="password" class="form-control" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                                 <label for="password">Password</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <div class="form-floating">
-                                <input name="password_confirmation" type="password" class="form-control" placeholder="Re-Type Password" required>
-                                <label for="password_confirmation">Re-Type Password</label>
+                                <input name="password_confirmation" type="password" id="cnfrm-password" class="form-control" placeholder="Re-Type Password" required>
+                                <label for="password_confirmation">Confirm Password</label>
                             </div>
                         </div>
                     </div>
@@ -200,15 +200,59 @@
         window.hasLoginSuccessMessage = @json(session('login_success'));
         window.hasLoginErrorMessage = @json(session('login_error'));
 
-        function showLogin() {
-            document.getElementById('register').style.display = 'none';
-            document.getElementById('login').style.display = 'block';
+        document.addEventListener('DOMContentLoaded', (event) => {
+            if (window.hasRegisterSuccessMessage) {
+                showModal('registerSuccessModal');
+            }
+            if (window.hasRegisterErrorMessage) {
+                showModal('registerErrorModal');
+            }
+            if (window.hasLoginSuccessMessage) {
+                showModal('loginSuccessModal');
+            }
+            if (window.hasLoginErrorMessage) {
+                showModal('loginErrorModal');
+            }
+        });
+
+        function showModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'block';
+
+            const span = modal.getElementsByClassName('close')[0];
+            span.onclick = function() {
+                modal.style.display = 'none';
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            }
         }
 
         function showRegister() {
             document.getElementById('login').style.display = 'none';
             document.getElementById('register').style.display = 'block';
         }
+
+        function showLogin() {
+            document.getElementById('register').style.display = 'none';
+            document.getElementById('login').style.display = 'block';
+        }
+
+        function checkPassword(event) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('cnfrm-password').value;
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                event.preventDefault();
+                return false;
+            }
+            return true;
+        }
     </script>
+    
+    <script src="{{ asset('js/login.js') }}"></script>
 </body>
 </html>

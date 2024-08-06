@@ -14,10 +14,19 @@ class loginModel extends Authenticatable
 
     protected $table = 'loginmodels';
     protected $fillable = [
-        'Role',
-        'firstname',
+
+        'Type',
         'lastname',
+        'firstname',
+        'middle',
+        'address',
+        'city',
+        'province',
+        'postal_code',
         'username',
+        'Role',
+        'id_no',
+        'campus',
         'email',
         'password',
     ];

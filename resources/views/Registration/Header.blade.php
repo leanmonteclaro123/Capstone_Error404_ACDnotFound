@@ -66,8 +66,9 @@
                 <li><a href="#" class="nav__link" data-target="contact_us">Contact</a></li>
 
                 @auth
+                {{ \Log::info('User is authenticated in view', ['user' => Auth::user()]) }}
                 <!--=============== USER DROPDOWN ===============-->
-                <li class="dropdown__item">
+                <li class="dropdown__item" id="dropdown2">
                     <div class="nav__link">
                         {{ Auth::user()->username }} <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                     </div>
@@ -96,7 +97,41 @@
                     </ul>
                 </li>
                 @else
+                <!-- Check for authenticated_user in session if Auth::user() is not available -->
+                @if(session('authenticated_user'))
+                {{ \Log::info('Displaying username from session', ['user' => session('authenticated_user')]) }}
+                <!--=============== USER DROPDOWN ===============-->
+                <li class="dropdown__item" id="dropdown2">
+                    <div class="nav__link">
+                        {{ session('authenticated_user')->username }} <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+
+                    <ul class="dropdown__menu">
+                        <li>
+                            <a href="#" class="dropdown__link">
+                                <i class="ri-user-line"></i> Profile
+                            </a>                          
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown__link">
+                                <i class="ri-lock-line"></i> Account
+                            </a>
+                        </li>
+                        <li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                            <a href="{{ route('logout') }}" class="dropdown__link"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="ri-logout-box-line"></i> Signout
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @else
                 <li><a href="{{ route('login') }}" class="nav__link">Login</a></li>
+                @endif
                 @endauth
             </ul>
         </div>

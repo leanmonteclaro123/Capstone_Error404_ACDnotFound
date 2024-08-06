@@ -4,6 +4,7 @@
     font-size: 15px;
     font-family: sans-serif;
     box-sizing: border-box;
+    
 }
 
 .wrapper {
@@ -13,6 +14,12 @@
     min-height: 100vh;
     padding: 20px;
     background-color: #f8f9fa;
+    background-image: url("/Images/loginbg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    
 }
 
 .form-box {
@@ -23,7 +30,7 @@
     max-width: 600px;
     padding: 20px;
     border-radius: 10px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.851);
 }
 
 .register-container, .login-container {

@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const registerErrorModal = document.getElementById("registerErrorModal");
     const loginSuccessModal = document.getElementById("loginSuccessModal");
     const loginErrorModal = document.getElementById("loginErrorModal");
-    
+
     const spanRegisterSuccess = registerSuccessModal.getElementsByClassName("close")[0];
     const spanRegisterError = registerErrorModal.getElementsByClassName("close")[0];
     const spanLoginSuccess = loginSuccessModal.getElementsByClassName("close")[0];
@@ -72,3 +72,48 @@ function showRegister() {
     document.getElementById('register').style.display = 'block';
     document.getElementById('login').style.display = 'none';
 }
+
+function checkPassword(event){
+    let password = document.getElementById("password").value;
+    let cnfrmPassword = document.getElementById("cnfrm-password").value;
+    console.log("Password:", password, "Confirm Password:", cnfrmPassword);
+
+    if(password.length != 0){
+        if(password == cnfrmPassword){
+            document.getElementById('cnfrm-password').style.borderColor = "#1dcd59"; // Green
+            return true; // Allow form submission
+        }
+        else{
+            document.getElementById('cnfrm-password').style.borderColor = "#ff4d4d"; // Red
+            event.preventDefault(); // Prevent form submission
+            return false;
+        }
+    }
+    else{
+        document.getElementById('cnfrm-password').style.borderColor = ""; // Default
+        event.preventDefault(); // Prevent form submission
+        return false;
+    }
+}
+
+// Attach checkPassword function to input events of password fields for real-time feedback
+document.getElementById('password').addEventListener('input', checkPassword);
+document.getElementById('cnfrm-password').addEventListener('input', checkPassword);
+
+// Function to check role and set ID field requirement
+function checkRole() {
+    let role = document.getElementById('Role').value;
+    let idField = document.getElementById('id_no');
+
+    if (role === 'Student' || role === 'Faculty') {
+        idField.setAttribute('required', true);
+    } else {
+        idField.removeAttribute('required');
+    }
+}
+
+// Attach checkRole function to change event of role select
+document.getElementById('Role').addEventListener('change', checkRole);
+
+// Initial call to checkRole to set the correct state on page load
+document.addEventListener('DOMContentLoaded', checkRole);

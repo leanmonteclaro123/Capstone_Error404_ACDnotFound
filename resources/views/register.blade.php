@@ -65,7 +65,7 @@
                 <div class="section">
                     <h4>Vehicle Information</h4>
                     <div class="form-group">
-                        <input type="text" id="loginID" value="{{ Auth::user()->id }} " name="loginID" style="display: none">
+                        {{-- <input type="text" id="loginID" value="{{ Auth::user()->id }} " name="loginID" style="display: none"> --}}
 
                         <label for="license-plate-number">License Plate No.:</label>
                         <input type="text" id="license_plate_number" name="license_plate_number" required>
